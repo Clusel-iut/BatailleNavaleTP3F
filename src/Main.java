@@ -7,19 +7,11 @@ public class Main
 		// TODO Auto-generated method stub
 		
 		
-		Partie bataillenavale= new Partie().Play(); 
+		Partie bataillenavale= new partie().play(); 
 		System.out.println("la partie est prête à être jouer");
 		
 		
-		
-		
-		/*Bateau sousmarin= new Sousmarin();
-		Bateau porteavion= new Porteavion();
-		Bateau torpilleur = new Torpilleur();
-		Bateau croiseur = new Croiseur();
-		Bateau contre-torpilleur = new Contre-torpilleur();
-		*/
-		
+
 	}
 
 }
