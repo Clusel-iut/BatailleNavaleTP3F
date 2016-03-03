@@ -10,8 +10,7 @@ public class Battleship
 {
 
 	/**
-	 * The game is ready to be play, with the rack, differents boats placed randomly in the rack, 
-	 * with numbers and letters for show to the player where he points its cursor. 
+	 * Creates a new battleship game, ready to be played (2 racks with randomly placed boats.)
 	 */
 	public Battleship()
 	{
@@ -19,8 +18,7 @@ public class Battleship
 	}
 
 	/**
-	 * The party is underway, there are red crosses where the player have touch any boats, and just a point
-	 * where the play don't touch any boats 
+	 * Plays the game ( jeu tour par tour)
 	 */
 	public void play()
 	{
