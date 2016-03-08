@@ -1,16 +1,22 @@
-// TODO update README.md (in english, what/who)
+// TODO (done) update README.md (in english, what/who)
 
-// TODO write comment
+// TODO (done) write comment
+/**
+ * It's the main class who call every constructors like BattleshipGame and play. 
+ */
 public class Main
 {
 
-	// TODO write comment
+	// TODO write comment	
+/**
+ * Create and begin a new BattleshipGame.
+ */
 	public static void main(String[] args)
 	{
-		new Battleship().play();
+		new BattleshipGame().play();
 		
-		// TODO fix this (the game has been played...)
-		System.out.println("la partie est prête à être jouer");
+		// TODO (done) fix this (the game has been played...)
+		
 		
 		
 
