@@ -5,6 +5,7 @@
 
  */
 
+// TODO rename this class (ask for advice)
 public class Battleship
 
 {
@@ -14,15 +15,17 @@ public class Battleship
 	 */
 	public Battleship()
 	{
-	
+		// TODO write code
+
 	}
 
+	// TODO update comment (what is the main algorithm?)
 	/**
 	 * Plays the game ( jeu tour par tour)
 	 */
 	public void play()
 	{
-		
+		// TODO write code		
 	
 	}
 	
