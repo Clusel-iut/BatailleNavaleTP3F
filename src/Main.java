@@ -1,7 +1,7 @@
 
 // TODO  rewrite comment (ask for advice)
 /**
- * It's the main class who call every constructors like BattleshipGame and play.
+ * Application that launches a battleship game
  */
 public class Main
 {
