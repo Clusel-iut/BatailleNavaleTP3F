@@ -13,36 +13,46 @@ public class BattleshipGame
 
 	// TODO write comment
 	private Rack player2Rack;
-
-	// TODO write comment
-	private Player player1;
-
-	// TODO write comment
-	private Player player2;
-
+    
+	private Player[] players;
+	
+	
 	/**
 	 * Creates a new battleship game, ready to be played (2 racks with randomly
 	 * placed boats and 2 players ready to play.)
 	 */
 	public BattleshipGame()
 	{
+	
 		this.player1Rack = new Rack();
 		this.player2Rack = new Rack();
-		this.player1 = new Player();
-		this.player2 = new Player();
+		this.players = new Player[2];
+		this.players[0] = new Player();
+		this.players[1] = new Player();
+		
+		
 	}
 
-	// TODO write comment
+	// @formatter:off
 	/**
-	 * Plays the game. current player is player 1 while <game not finished> <ask
-	 * current player where to shoot> <evaluate shot result> if
-	 * <touched> <evaluate game result> else current player changes
+	 * Plays the game. 
+	 * 
+	 * current player is player 1 
+	 * while <game not finished> 
+	 * 	<ask current player where to shoot> 
+	 *  <evaluate shot result> 
+	 *  if <not touched>  current player changes
+	 *  <evaluate game result>
+	 *   
 	 */
+	// @formatter:on
 	public void play()
 
 	{
 		System.out.println("la partie est prête à être jouée !");
-		Player currentPlayer = this.player1;
+		Player currentPlayer = this.players[0];
+		int num=0;
+		
 		while (this.notFinished())
 			;
 		{
@@ -50,31 +60,27 @@ public class BattleshipGame
 			askShoot(currentPlayer);
 
 			// TODO use this.
-			evaluateShoot();
+			boolean result = this.evaluateShoot();
 
-			// TODO think about it: why evaluateShoot is called twice?
-			if (this.evaluateShoot())
-			{
-				evaluateGame();
-			}
-			else
+			// TODO think about it: why evaluateShoot is called twice? (done)
+			if (result==false)
 			{
 				// TODO consider gathering players references into an array to 
 				// easily switch current player 
-				currentPlayer = this.player2;
+				currentPlayer = this.players[(num+1)%2]; 
+				num=num+1;
 			}
+			isGameOver();
 		}
 		System.out.println("la partie est finie.");
 	}
 
-	// TODO clean comment (ask for advice)
+	// TODO clean comment (ask for advice) (done) 
 	/**
-	 * This method watches if all boats of one player are destroyed If it's
-	 * true, this method stops the game Else, it does nothing
-	 * 
-	 * @return true or false
+	 * evaluates if game is over (all boats of a player are destroyed).
+	 * @return <tt>true</tt> if game is over, <tt>false</tt> else.
 	 */
-	private boolean evaluateGame()
+	private boolean isGameOver()
 	{
 		return false;
 		// TODO Auto-generated method stub
