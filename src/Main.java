@@ -1,5 +1,3 @@
-
-// TODO  rewrite comment (ask for advice)
 /**
  * Application that launches a battleship game
  */
