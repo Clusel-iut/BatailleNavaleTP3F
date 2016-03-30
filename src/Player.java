@@ -7,7 +7,10 @@
  */
 public class Player
 {
-
+	/**
+	 * 
+	 */
+	
 	/**
 	 * This class create a player
 	 */
