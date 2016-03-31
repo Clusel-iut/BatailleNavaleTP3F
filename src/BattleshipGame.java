@@ -8,13 +8,22 @@
 
 public class BattleshipGame
 {
+
+	/**
+	 * Create the rack of the player 1.
+	 */
 	// TODO write comment
 	private Rack player1Rack;
-
+	/**
+	 * Create the rack of the player 2.
+	 */
 	// TODO write comment
 	private Rack player2Rack;
-    
-	private Player[] players;
+	
+	/**
+	 * Create a Player's table, named 'players', it is empty.
+	 */
+	private PlayerInput[] players;
 	
 	
 	/**
@@ -26,9 +35,9 @@ public class BattleshipGame
 	
 		this.player1Rack = new Rack();
 		this.player2Rack = new Rack();
-		this.players = new Player[2];
-		this.players[0] = new Player();
-		this.players[1] = new Player();
+		this.players = new PlayerInput[2];
+		this.players[0] = new PlayerInput();
+		this.players[1] = new PlayerInput();
 		
 		
 	}
@@ -50,25 +59,23 @@ public class BattleshipGame
 
 	{
 		System.out.println("la partie est prête à être jouée !");
-		Player currentPlayer = this.players[0];
+		PlayerInput currentPlayer = this.players[0];
 		int num=0;
-		
+		 
 		while (this.notFinished())
-			;
 		{
-			// TODO use this.
-			askShoot(currentPlayer);
+			// TODO (done) use this.
+		    Position position = currentPlayer.askShoot();
 
-			// TODO use this.
-			boolean result = this.evaluateShoot();
+			// TODO (done) use this.
+			boolean result = position.evaluateShoot();
 
 			// TODO think about it: why evaluateShoot is called twice? (done)
 			if (result==false)
 			{
-				// TODO consider gathering players references into an array to 
+				// TODO (done) consider gathering players references into an array to 
 				// easily switch current player 
 				currentPlayer = this.players[(num+1)%2]; 
-				num=num+1;
 			}
 			isGameOver();
 		}
@@ -85,29 +92,6 @@ public class BattleshipGame
 		return false;
 		// TODO Auto-generated method stub
 
-	}
-
-	/**
-	 * This method asks to the currentPlayer where he wants to shoot
-	 * 
-	 * @param currentPlayer
-	 */
-	private void askShoot(Player currentPlayer)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
-	/**
-	 * This method watches where the shoot go. If it touches a boat from the
-	 * other player, the method returns true Else, returns false
-	 * 
-	 * @return true or false
-	 */
-	private boolean evaluateShoot()
-	{
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 	/**
