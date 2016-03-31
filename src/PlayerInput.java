@@ -1,6 +1,6 @@
 // TODO (done) rewrite comment (this does does not represents 2 players)
 /**
- * represents a battleshipgame's player.
+ * represents the interaction with the player and the game.
  * @author cluselm
  * 
  * 
@@ -18,6 +18,7 @@ public class PlayerInput
 		return new Position(0,0);
 
 	}
+
 
 	
 }

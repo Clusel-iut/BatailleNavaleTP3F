@@ -16,8 +16,21 @@ public class Rack
 	 * Players can push a button, where boats have a new randomly spot.
 	 */
 	public Rack()
+	
 	{
 		
+	}
+
+	/**
+	 * This method watches where the shoot go. If it touches a boat from the
+	 * other player, the method returns true Else, returns false
+	 * 
+	 * @return true or false
+	 */
+	private boolean evaluateShoot(Position position)
+	{
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 }

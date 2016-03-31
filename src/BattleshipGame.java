@@ -68,7 +68,7 @@ public class BattleshipGame
 		    Position position = currentPlayer.askShoot();
 
 			// TODO (done) use this.
-			boolean result = position.evaluateShoot();
+			boolean result = evaluateShoot(position);
 
 			// TODO think about it: why evaluateShoot is called twice? (done)
 			if (result==false)
@@ -89,6 +89,7 @@ public class BattleshipGame
 	 */
 	private boolean isGameOver()
 	{
+		
 		return false;
 		// TODO Auto-generated method stub
 
