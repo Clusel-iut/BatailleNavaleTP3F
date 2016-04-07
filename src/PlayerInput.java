@@ -13,7 +13,7 @@ public class PlayerInput
 	 * 
 	 * @param currentPlayer
 	 */
-	private Position askShoot(PlayerInput currentPlayer)
+	public Position askShoot()
 	{
 		return new Position(0,0);
 

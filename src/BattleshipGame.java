@@ -9,21 +9,16 @@
 public class BattleshipGame
 {
 
+		
 	/**
-	 * Create the rack of the player 1.
-	 */
-	// TODO write comment
-	private Rack player1Rack;
-	/**
-	 * Create the rack of the player 2.
-	 */
-	// TODO write comment
-	private Rack player2Rack;
-	
-	/**
-	 * Create a Player's table, named 'players', it is empty.
+	 * player inputs table
 	 */
 	private PlayerInput[] players;
+	
+	/**
+	 * rack inputs table
+	 */
+	private Rack[] racks;
 	
 	
 	/**
@@ -33,8 +28,9 @@ public class BattleshipGame
 	public BattleshipGame()
 	{
 	
-		this.player1Rack = new Rack();
-		this.player2Rack = new Rack();
+		this.racks = new Rack[2];
+		this.racks[0]= new Rack();
+		this.racks[1] = new Rack();
 		this.players = new PlayerInput[2];
 		this.players[0] = new PlayerInput();
 		this.players[1] = new PlayerInput();
@@ -60,29 +56,24 @@ public class BattleshipGame
 	{
 		System.out.println("la partie est prête à être jouée !");
 		PlayerInput currentPlayer = this.players[0];
-		int num=0;
+		Rack currentRack= this.racks[1];
+		int numplayer=0;
+		int numrack=1;
 		 
-		while (this.notFinished())
+		while (this.isGameOver())
 		{
-			// TODO (done) use this.
 		    Position position = currentPlayer.askShoot();
 
-			// TODO (done) use this.
-			boolean result = evaluateShoot(position);
-
-			// TODO think about it: why evaluateShoot is called twice? (done)
-			if (result==false)
+			if (!this.isTouchedAt(position))
 			{
-				// TODO (done) consider gathering players references into an array to 
-				// easily switch current player 
-				currentPlayer = this.players[(num+1)%2]; 
+				currentPlayer = this.players[(numplayer+1)%2]; 
+				currentRack = this.racks[(numrack+1)%2];
 			}
-			isGameOver();
 		}
 		System.out.println("la partie est finie.");
 	}
 
-	// TODO clean comment (ask for advice) (done) 
+	
 	/**
 	 * evaluates if game is over (all boats of a player are destroyed).
 	 * @return <tt>true</tt> if game is over, <tt>false</tt> else.
@@ -95,15 +86,5 @@ public class BattleshipGame
 
 	}
 
-	/**
-	 * This method return true if all boats of one player are destroyed. Else,
-	 * the method returns false
-	 * 
-	 * @return true or false
-	 */
-	private boolean notFinished()
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 }
