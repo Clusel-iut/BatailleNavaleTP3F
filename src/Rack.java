@@ -16,7 +16,7 @@ public class Rack
 		public static final int CASE_OCCUPED = 2;
 		public static final int DEFAULT_SIZE_LENGHT = 9;
 		public static final int DEFAULT_SIZE_WIDTH = 9;
-		private int[][] grille; 
+		public int[][] grille; 
 		
 	// TODO (done) detail comment (how are the boat placed?)
 	/**
