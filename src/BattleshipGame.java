@@ -40,6 +40,8 @@ public class BattleshipGame
 
 	// @formatter:off
 	/**
+	 * ALGORITHM :
+	 * 
 	 * Plays the game. 
 	 * 
 	 * current player is player 1 
