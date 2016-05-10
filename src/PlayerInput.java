@@ -1,4 +1,3 @@
-// TODO (done) rewrite comment (this does does not represents 2 players)
 /**
  * represents the interaction with the player and the game.
  * @author cluselm

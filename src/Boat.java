@@ -22,6 +22,8 @@ public class Boat
 	private boolean TouchedOrNo; 
 	private boolean SankOrNo; 
 	
+	// TODO (fix it) there can be only a constructor for Boat, not a construstor for
+	// each kind of boat
 		
 	/**
 	 * Put randomly the porte-avion in the rack 
