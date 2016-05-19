@@ -16,7 +16,7 @@ public class Rack
 		public static final int CASE_OCCUPED = 2;
 		public static final int DEFAULT_SIZE_LENGHT = 9;
 		public static final int DEFAULT_SIZE_WIDTH = 9;
-		public int[][] grille; 
+		public int[][] grille;
 		
 	// TODO (done) detail comment (how are the boat placed?)
 	/**
@@ -34,11 +34,41 @@ public class Rack
 				
 			}
 		}
+		Boat croiseur = new Boat((1,3), BoatsType.CROISEUR,1);
+		for (int m=1; m<2; m++)
+		{
+			for (int q=3; q < (BoatsType.CROISEUR).getWidth(); q++)
+			{
+				this.grille[m][q] = CASE_OCCUPED;
+			}
+		}
+		Boat marin = new Boat((2,3), BoatsType.MARIN,1);
+		for (int m=2; m<3; m++)
+		{
+			for (int q=3; q < (BoatsType.MARIN).getWidth(); q++)
+			{
+				this.grille[m][q] = CASE_OCCUPED;
+			}
+		}
+		Boat porteavion = new Boat((3,3), BoatsType.PORTEAVION,1);
+		for (int m=3; m  <4; m++)
+		{
+			for (int q=3; q < (BoatsType.PORTEAVION).getWidth(); q++)
+			{
+				this.grille[m][q] = CASE_OCCUPED;
+			}
+		}
+		Boat torpilleur = new Boat((4,3), BoatsType.TORPILLEUR,1);
+		for (int m=4; m  < 5; m++)
+		{
+			for (int q=3; q < (BoatsType.TORPILLEUR).getWidth(); q++)
+			{
+				this.grille[m][q] = CASE_OCCUPED;
+			}
+		}
 		
 	}
-		
-	
-	
+
 		/**
 	 * Check if a boat is touched whan shooting at a given position
 	 * @return <tt>true</tt> if a boat has been touched, <tt>false</tt> if not 

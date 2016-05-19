@@ -10,5 +10,6 @@ public class PasPossible extends Exception
 		System.out.println("Cette position est incorrect (en dehors de la grille)");
 		
 		
+		
 	}
 }

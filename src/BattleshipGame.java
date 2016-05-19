@@ -66,7 +66,7 @@ public class BattleshipGame
 		{
 		    Position position = currentPlayer.askShoot();
 
-			if (!this.isTouchedAt(position))
+			if (!this.isBoatTouchedAt(position))
 			{
 				currentPlayer = this.players[(numplayer+1)%2]; 
 				currentRack = this.racks[(numrack+1)%2];
@@ -82,11 +82,9 @@ public class BattleshipGame
 	 */
 	private boolean isGameOver()
 	{
-		
 		return false;
-		// TODO Auto-generated method stub
-
 	}
 
-	
 }
+	
+

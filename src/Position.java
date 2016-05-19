@@ -25,22 +25,30 @@ public class Position extends Exception
 	
 	
 	/**
-	 * Create a position if abcissa and ordinate are between 0 and 9
+	 * Create a position with parameters gave.
 	 * @param abscisse
-	 * @param ordonnée
+	 * @param ordonnee 
 	 */
 	// TODO finish writing javadoc comment
-	public Position(int abscisse, int ordonnee) throws PasPossible
+	public Position(int abscisse, int ordonnee) 
 		{
-			if ((abscisse<0) || (ordonnee<0) || (abscisse>9) || (ordonnee>9))
-				throw new PasPossible();
-			else
+			if ((abscisse<0) || (ordonnee<0)  || (abscisse>9) || (ordonnee>9))
 				{	
 					this.abscissa=abscisse;
 					this.ordinate=ordonnee;
 				}
 		}
-
+	
+	/**
+	 * Create a position randomly
+	 * @param abscisse
+	 * @param ordonnée
+	 */
+	public Position()
+	{
+		this.abscissa=(int) (Math.random()*9+1);
+		this.ordinate=(int) (Math.random()*9+1);
+	}
 	
 
 }
