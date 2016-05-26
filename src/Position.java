@@ -34,8 +34,8 @@ public class Position extends Exception
 		{
 			if ((abscisse<0) || (ordonnee<0)  || (abscisse>9) || (ordonnee>9))
 				{	
-					this.abscissa=abscisse;
-					this.ordinate=ordonnee;
+					this.setAbscissa(abscisse);
+					this.setOrdinate(ordonnee);
 				}
 		}
 	
@@ -46,8 +46,40 @@ public class Position extends Exception
 	 */
 	public Position()
 	{
-		this.abscissa=(int) (Math.random()*9+1);
-		this.ordinate=(int) (Math.random()*9+1);
+		this.setAbscissa((int) (Math.random()*9+1));
+		this.setOrdinate((int) (Math.random()*9+1));
+	}
+
+	/**
+	 * @return the ordinate of the position
+	 */
+	public int getOrdinate()
+	{
+		return this.ordinate;
+	}
+
+	/**
+	 * @param ordinate
+	 */
+	public void setOrdinate(int ordinate)
+	{
+		this.ordinate = ordinate;
+	}
+
+	/**
+	 * @return the abscissa of the position
+	 */
+	public int getAbscissa()
+	{
+		return this.abscissa;
+	}
+
+	/**
+	 * @param abscissa
+	 */
+	public void setAbscissa(int abscissa)
+	{
+		this.abscissa = abscissa;
 	}
 	
 

@@ -56,17 +56,20 @@ public class BattleshipGame
 	public void play()
 
 	{
+		
+		this.racks[0].toString();
+		this.racks[1].toString();
 		System.out.println("la partie est prête à être jouée !");
 		PlayerInput currentPlayer = this.players[0];
 		Rack currentRack= this.racks[1];
 		int numplayer=0;
 		int numrack=1;
 		 
-		while (this.isGameOver())
+		while (this.isGameOver(this.racks[0]) || this.isGameOver(this.racks[1]))
 		{
 		    Position position = currentPlayer.askShoot();
 
-			if (!this.isBoatTouchedAt(position))
+			if (Rack.isBoatTouchedAt(position) == false)
 			{
 				currentPlayer = this.players[(numplayer+1)%2]; 
 				currentRack = this.racks[(numrack+1)%2];
@@ -77,13 +80,26 @@ public class BattleshipGame
 
 	
 	/**
+	 * if a boat are touched, we replace the identification of the boat on the rack at the position 
+	 * we put a -1 on the rack
 	 * evaluates if game is over (all boats of a player are destroyed).
 	 * @return <tt>true</tt> if game is over, <tt>false</tt> else.
 	 */
-	private boolean isGameOver()
+	private boolean isGameOver(Rack arack)
 	{
+		for (int x=0; x<10; x++)
+			{
+				for (int y=0; y<10; y++)
+				{
+					if ( this.arack[x][y]!= -1 )
+						{
+							return true;
+						}
+				}
+			}
 		return false;
 	}
+		
 
 }
 	

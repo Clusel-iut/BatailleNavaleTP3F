@@ -6,9 +6,25 @@
 public enum BoatsType
 {
 
+	/**
+	 * represent a croiseur with the name, the number in the rack, the length, 
+	 * the width and the maximum length of the rack for not overtake the rack
+	 */
 	CROISEUR("Croiseur", 8, 4, 1, 7),
+	/**
+	 * represent a marin with the name, the number in the rack, the length, 
+	 * the width and the maximum length of the rack for not overtake the rack
+	 */
 	MARIN("Sous-marin", 51, 3, 1, 8),	
+	/**
+	 * represent a porteavion with the name, the number in the rack, the length, 
+	 * the width and the maximum length of the rack for not overtake the rack
+	 */
 	PORTEAVION("Porte-avion", 84, 5, 1, 6),
+	/**
+	 * represent a torpilleur with the name, the number in the rack, the length, 
+	 * the width and the maximum length of the rack for not overtake the rack
+	 */
 	TORPILLEUR("Torpilleur", 26, 2, 1, 9), 	
 		
 	
@@ -82,7 +98,7 @@ public enum BoatsType
 	 */
 	public int getLength()
 	{
-		return length;
+		return this.length;
 	}
 
 
@@ -91,7 +107,7 @@ public enum BoatsType
 	 */
 	public String getIdentification()
 	{
-		return identification;
+		return this.identification;
 	}
 
 
@@ -100,7 +116,7 @@ public enum BoatsType
 	 */
 	public int getNumberIdentification()
 	{
-		return numberIdentification;
+		return this.numberIdentification;
 	}
 
 
@@ -109,7 +125,7 @@ public enum BoatsType
 	 */
 	public int getWidth()
 	{
-		return width;
+		return this.width;
 	}
 
 
@@ -118,7 +134,7 @@ public enum BoatsType
 	 */
 	public int getLenght_rack()
 	{
-		return length_rack;
+		return this.length_rack;
 	}
 	
 }

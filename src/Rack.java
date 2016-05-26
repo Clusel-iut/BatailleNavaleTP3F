@@ -11,12 +11,30 @@
 
 public class Rack
 {
+		/**
+		 * represents the water on the rack
+		 */
 		public static final int DEFAULT_CASE = 0;
+		/**
+		 * represents a party of a boat touched
+		 */
 		public static final int CASE_TOUCHED = 1;
+		/**
+		 * represents a party of a boat
+		 */
 		public static final int CASE_OCCUPED = 2;
+		/**
+		 * represent the lenght of the rack
+		 */
 		public static final int DEFAULT_SIZE_LENGHT = 9;
+		/**
+		 * represent the width of the rack
+		 */
 		public static final int DEFAULT_SIZE_WIDTH = 9;
-		public int[][] grille;
+		/**
+		 * represent all case where boats are placed
+		 */
+		public static int[][] grille;
 		
 	// TODO (done) detail comment (how are the boat placed?)
 	/**
@@ -25,73 +43,107 @@ public class Rack
 	public Rack()
 	{
 		
-		this.grille = new int[DEFAULT_SIZE_LENGHT][DEFAULT_SIZE_WIDTH];
+		grille = new int[DEFAULT_SIZE_LENGHT][DEFAULT_SIZE_WIDTH];
 		for (int x = 0; x<9; x++)
 		{
 			for (int y = 0; y<9; y++)
 			{
-				this.grille[x][y]= DEFAULT_CASE;
+				grille[x][y]= DEFAULT_CASE;
 				
 			}
 		}
-		Boat croiseur = new Boat((1,3), BoatsType.CROISEUR,1);
+		Position x = new Position(1,3);
+		Boat croiseur = new Boat(x, BoatsType.CROISEUR,1);
 		for (int m=1; m<2; m++)
 		{
 			for (int q=3; q < (BoatsType.CROISEUR).getWidth(); q++)
 			{
-				this.grille[m][q] = CASE_OCCUPED;
+				grille[m][q] = CASE_OCCUPED;
 			}
 		}
-		Boat marin = new Boat((2,3), BoatsType.MARIN,1);
+		Position y = new Position(2,3);
+		Boat marin = new Boat(y, BoatsType.MARIN,1);
 		for (int m=2; m<3; m++)
 		{
 			for (int q=3; q < (BoatsType.MARIN).getWidth(); q++)
 			{
-				this.grille[m][q] = CASE_OCCUPED;
+				grille[m][q] = CASE_OCCUPED;
 			}
 		}
-		Boat porteavion = new Boat((3,3), BoatsType.PORTEAVION,1);
+		Position z = new Position(3,3);
+		Boat porteavion = new Boat(z, BoatsType.PORTEAVION,1);
 		for (int m=3; m  <4; m++)
 		{
 			for (int q=3; q < (BoatsType.PORTEAVION).getWidth(); q++)
 			{
-				this.grille[m][q] = CASE_OCCUPED;
+				grille[m][q] = CASE_OCCUPED;
 			}
 		}
-		Boat torpilleur = new Boat((4,3), BoatsType.TORPILLEUR,1);
+		Position a = new Position(4,3);
+		Boat torpilleur = new Boat(a, BoatsType.TORPILLEUR,1);
 		for (int m=4; m  < 5; m++)
 		{
 			for (int q=3; q < (BoatsType.TORPILLEUR).getWidth(); q++)
 			{
-				this.grille[m][q] = CASE_OCCUPED;
+				grille[m][q] = CASE_OCCUPED;
 			}
 		}
 		
 	}
 
 		/**
-	 * Check if a boat is touched whan shooting at a given position
+	 * Check if a boat is touched when shooting at a given position
+	 * @param position 
 	 * @return <tt>true</tt> if a boat has been touched, <tt>false</tt> if not 
 	 */
-	private boolean isBoatTouchedAt(Position position)
+	public static boolean isBoatTouchedAt(Position position)
 	{
 		
-		  if(position == DEFAULT_CASE)
+		  if(grille[position.getAbscissa()][position.getOrdinate()] == DEFAULT_CASE)
 
-		      System.out.println("No, there is nothing here Captain");
-		  
-		  return false;
+		      {
+			  	System.out.println("No, there is nothing here Captain");
+		        return false;
+		       }
 
-		  if(position== CASE_TOUCHED)
+		  if(grille[position.getAbscissa()][position.getOrdinate()] == CASE_TOUCHED)
 
-		      System.out.println("You have already shoot here, choose an other case");
+		      {
+			  	System.out.println("You have already shoot here, choose an other case");
+			  	return true;
+			  
+			  }
 		    
-		    if(position == CASE_OCCUPED)
+		    if(grille[position.getAbscissa()][position.getOrdinate()] == CASE_OCCUPED)
 
-			      System.out.println("You have touched a boat, Captain, well played");
-		    return true;
-
+			      {
+		    			System.out.println("You have touched a boat, Captain, well played");
+		    			return true;
+			      }
+		    return false;
 		
 	}
 	
+	public String toString()
+	
+	{
+		StringBuffer sb = new StringBuffer();
+		sb.append("-------------------------\n");
+		
+				
+		for (int i=0; i<DEFAULT_SIZE_LENGHT; i++) 
+		{
+			for (int j=0; j<DEFAULT_SIZE_WIDTH; j++)
+			{
+				sb.append(grille[i][j]+" ");
+					
+			}
+			sb.append("/n");
+				
+	   	}
+		sb.append("-------------------------\n");
+		return	 sb.toString();
+	}	
+	
+
 }
